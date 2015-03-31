@@ -12,8 +12,8 @@ makeDancer.prototype.step = function(){
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
-makeDancer.prototype.setPosition = function(){
-  this.$node.css({top: this.top, left: this.left});
+makeDancer.prototype.setPosition = function(top, left){
+  this.$node.css({top: top, left: left});
 };
 
 
