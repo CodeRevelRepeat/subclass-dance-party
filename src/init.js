@@ -29,20 +29,20 @@ $(document).ready(function(){
     );
 
     $('body').append(dancer.$node);
+
+    window.dancers.push(dancer);
   });
 
-$(".lineUpButton").on("click", function(event){
-
-  $(".dancer").addClass("lineup");
-
-});
 
 
-$("body").on("mouseover", ".dancer", function(event){
-  console.log("mouse");
-  $(this).effect("explode");
+  $(".lineUpButton").on("click", function(event){
+    $(".dancer").addClass("lineup");
+  });
 
-})
+
+  $("body").on("mouseover", ".dancer", function(event){
+    $(this).effect("explode");
+  });
 
 });
 

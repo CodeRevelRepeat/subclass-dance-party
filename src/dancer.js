@@ -4,8 +4,9 @@ var makeDancer = function(top, left, timeBetweenSteps){
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
-  this.step();
   this.setPosition(top, left);
+  this.id = window.dancers.length;
+  this.step();
 };
 
 makeDancer.prototype.step = function(){
@@ -21,51 +22,48 @@ makeDancer.prototype.setPosition = function(top, left){
 };
 
 
-makeDancer.prototype.collide = function(){
+// makeDancer.prototype.collide = function(){
 
-//loop through window.dancer
-//
-// var positionFinder = function(dancer){
 
-//      var topPoint = dancer.top + dancer.$node.css("height")/2;
-//      var bottomPoint = dancer.top - dancer.$node.css("height")/2;
-//      var leftPoint = dancer.left - dancer.$node.css("width")/2;
-//      var rightPoint = dancer.left + dancer.$node.css("width")/2;
+//   var distanceFinder = function(dancer1, dancer2){
+//     var distanceSum = Math.pow(dancer1.top - dancer2.top, 2) + Math.pow(dancer1.left - dancer2.left, 2);
+//     var distance = Math.sqrt(distanceSum);
+//     console.log("distance:" + distance)
+//     return distance;
+//   };
 
-//      return [topPoint, bottomPoint, leftPoint, rightPoint];
+
+//   var radiusFinder = function(dancer){
+//     var result = Math.sqrt(Math.pow(dancer.$node.width(), 2) + Math.pow(dancer.$node.height(), 2));
+//     return result;
+//   };
+
+
+//    console.log(window.dancers.length);
+//   for(var i=0; i<window.dancers.length; i++){
+//      if(this.id && window.dancers[i].id !== this.id){
+//       var thatRadius = radiusFinder(window.dancers[i]);
+//        var thisRadius = radiusFinder(this);
+//       if(0.6 * (thisRadius + thatRadius) > distanceFinder(this, window.dancers[i])){
+//         console.log("there is a collision");
+//         if(thisRadius >= thatRadius){
+//           var bigger = this;
+//           window.dancers[i].$node.remove();
+//           window.dancers.splice(i, 1);
+//         } else {
+//           var bigger = window.dancers[i];
+//           window.dancers.splice(this.id, 1);
+//           this.$node.remove();
+//         }
+//         console.log("assigning effects");
+//         bigger.$node.css({"height": 1.1 * bigger.$node.height(), "width": 1.1 * bigger.$node.width()});
+//         return;
+//       }
+
+//      }
+
+//   }
 
 // };
-
-var distanceFinder = function(dancer1, dancer2){
-  var distanceSum = Math.pow(dancer1.top - dancer2.top, 2) + Math.pow(dancer1.left - dancer2.left, 2);
-  var distance = Math.sqrt(distanceSum);
-  return distance;
-
-};
-
-var radiusFinder = ///continue here
-
-var thisPosition = positionFinder(this);
-
-for(var i=0; i<window.dancers.length; i++){
-   if(window.dancers[i] !== this){
-    // var thatPosition = positionFinder(window.dancers[i]);
-
-
-
-
-
-   }
-
-
-}
-
-//if dancer is not this
-//then check if overlap
-//    if overlap
-//        then check size
-//            bigger dancer gets bigger and smaller dancer disappears
-
-};
 
 

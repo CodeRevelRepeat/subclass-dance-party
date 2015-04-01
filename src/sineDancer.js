@@ -1,7 +1,9 @@
 var makeSineDancer = function(top, left, timeBetweenSteps){
+
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.borderRadius = 10;
   this.$node.addClass("pig");
+  // this.initiate = true;
+
 };
 
 makeSineDancer.prototype = Object.create(makeDancer.prototype);
@@ -16,6 +18,9 @@ makeSineDancer.prototype.step = function(){
     this.left += 5;
     this.top += 20 * Math.sin(this.left/5);
     this.setPosition(this.top, this.left);
+    // if(this.initiate){
+    //   this.collide();
+    // }
   }
 };
 
