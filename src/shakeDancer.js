@@ -9,7 +9,18 @@ makeShakeDancer.prototype.constructor = makeShakeDancer;
 
 makeShakeDancer.prototype.oldStep = makeDancer.prototype.step;
 
+makeShakeDancer.prototype.rotate = function(){
+  this.$node.rotate({
+  angle: 0,
+  animateTo: 360,
+  callback: "rotation"
+  });
+
+}
+
 makeShakeDancer.prototype.step = function(){
   this.oldStep();
-  this.$node.effect("explode");
+  // this.$node.effect("explode");
+  this.rotate();
+
 };
